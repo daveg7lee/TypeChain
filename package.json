@@ -4,5 +4,9 @@
   "description": "Learning Typescript by making a Blockchain with it",
   "main": "index.js",
   "author": "Dave",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": " node index.js",
+    "prestart": "tsc"
+  }
 }
