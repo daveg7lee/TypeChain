@@ -37,8 +37,9 @@ class Block {
     this.timestamp = timestamp;
   }
 }
+const genesisBlock: Block = new Block(0, "2020202020202", "", "Hello", 123456);
 
-let blockchain: Block[];
+let blockchain: Block[] = [genesisBlock];
 
 const getBlockChain = (): Block[] => blockchain;
 
@@ -63,6 +64,7 @@ const createNewBlock = (data: string): Block => {
     data,
     newTimeStamp
   );
+  addBlock(newBlock);
   return newBlock;
 };
 
@@ -93,5 +95,11 @@ const addBlock = (canditateBlock: Block): void => {
     blockchain.push(canditateBlock);
   }
 };
+
+createNewBlock("Second Block");
+createNewBlock("Third Block");
+createNewBlock("Fourth Block");
+
+console.log(blockchain);
 
 export {};
